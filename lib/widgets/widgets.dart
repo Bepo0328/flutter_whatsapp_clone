@@ -6,3 +6,4 @@ export 'web_chat_appbar.dart';
 export 'web_profile_bar.dart';
 export 'web_search_bar.dart';
 export 'package:flutter_whatsapp_clone/common/widgets/custom_button.dart';
+export 'package:flutter_whatsapp_clone/common/widgets/error.dart';

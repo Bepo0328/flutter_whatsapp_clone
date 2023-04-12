@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_whatsapp_clone/screens/screens.dart';
 import 'package:flutter_whatsapp_clone/widgets/widgets.dart';
 import 'package:flutter_whatsapp_clone/utils/utils.dart';
 
 class LandingScreen extends StatelessWidget {
   const LandingScreen({Key? key}) : super(key: key);
+
+  void navigateToLoginScreen(BuildContext context) {
+    Navigator.pushNamed(context, LoginScreen.routeName);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +48,7 @@ class LandingScreen extends StatelessWidget {
             SizedBox(
               width: size.width * 0.75,
               child: CustomButton(
-                onPressed: () {},
+                onPressed: () => navigateToLoginScreen(context),
                 text: 'AGREE AND CONTINUE',
               ),
             ),
