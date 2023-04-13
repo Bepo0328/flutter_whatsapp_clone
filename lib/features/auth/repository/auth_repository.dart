@@ -45,4 +45,25 @@ class AuthRepository {
       );
     }
   }
+
+  void verifyOTP({
+    required BuildContext context,
+    required String verificationId,
+    required String userOTP,
+  }) async {
+    try {
+      PhoneAuthCredential credential = PhoneAuthProvider.credential(
+        verificationId: verificationId,
+        smsCode: userOTP,
+      );
+      await auth.signInWithCredential(credential);
+      Navigator.pushNamedAndRemoveUntil(
+        context,
+        UserInformationScreen.routeName,
+        (route) => false,
+      );
+    } on FirebaseAuthException catch (e) {
+      showSnackBar(context: context, content: e.message!);
+    }
+  }
 }
