@@ -1,7 +1,7 @@
 import 'package:country_picker/country_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_whatsapp_clone/features/auth/controller/auth_controller.dart';
+import 'package:flutter_whatsapp_clone/controller/controller.dart';
 import 'package:flutter_whatsapp_clone/widgets/widgets.dart';
 import 'package:flutter_whatsapp_clone/utils/utils.dart';
 

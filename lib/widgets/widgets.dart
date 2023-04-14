@@ -7,3 +7,4 @@ export 'web_profile_bar.dart';
 export 'web_search_bar.dart';
 export 'common/custom_button.dart';
 export 'common/error.dart';
+export 'common/loader.dart';

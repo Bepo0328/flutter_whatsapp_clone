@@ -1,17 +1,20 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_whatsapp_clone/controller/controller.dart';
 import 'package:flutter_whatsapp_clone/utils/utils.dart';
 
-class UserInformationScreen extends StatefulWidget {
+class UserInformationScreen extends ConsumerStatefulWidget {
   static const String routeName = '/user-information';
   const UserInformationScreen({Key? key}) : super(key: key);
 
   @override
-  State<UserInformationScreen> createState() => _UserInformationScreenState();
+  ConsumerState<UserInformationScreen> createState() =>
+      _UserInformationScreenState();
 }
 
-class _UserInformationScreenState extends State<UserInformationScreen> {
+class _UserInformationScreenState extends ConsumerState<UserInformationScreen> {
   final TextEditingController nameController = TextEditingController();
   File? image;
 
@@ -26,6 +29,18 @@ class _UserInformationScreenState extends State<UserInformationScreen> {
     setState(() {});
   }
 
+  void storeUserData() async {
+    String name = nameController.text.trim();
+
+    if (name.isNotEmpty) {
+      ref.read(authControllerProvider).saveUserDataToFirebase(
+            context,
+            name,
+            image,
+          );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -38,9 +53,7 @@ class _UserInformationScreenState extends State<UserInformationScreen> {
                 children: [
                   image == null
                       ? const CircleAvatar(
-                          backgroundImage: NetworkImage(
-                            'https://png.pngitem.com/pimgs/s/649-6490124_katie-notopoulos-katienotopoulos-i-write-about-tech-round.png',
-                          ),
+                          backgroundImage: AssetImage(Strings.photoUrl),
                           radius: 64,
                         )
                       : CircleAvatar(
@@ -72,7 +85,7 @@ class _UserInformationScreenState extends State<UserInformationScreen> {
                     ),
                   ),
                   IconButton(
-                    onPressed: () {},
+                    onPressed: storeUserData,
                     icon: const Icon(
                       Icons.done,
                     ),

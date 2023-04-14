@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_whatsapp_clone/features/auth/auth.dart';
+import 'package:flutter_whatsapp_clone/controller/controller.dart';
 import 'package:flutter_whatsapp_clone/utils/utils.dart';
 
 class OTPScreen extends ConsumerWidget {
@@ -35,6 +35,7 @@ class OTPScreen extends ConsumerWidget {
             SizedBox(
               width: size.width * 0.5,
               child: TextField(
+                textAlign: TextAlign.center,
                 decoration: const InputDecoration(
                   hintText: '- - - - - -',
                   hintStyle: TextStyle(
