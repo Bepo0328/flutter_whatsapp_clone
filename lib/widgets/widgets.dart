@@ -1,5 +1,5 @@
-export 'chat_list.dart';
-export 'contacts_list.dart';
+export 'features/chat/chat_list.dart';
+export 'features/chat/contacts_list.dart';
 export 'my_message_card.dart';
 export 'sender_message_card.dart';
 export 'web_chat_appbar.dart';
@@ -8,4 +8,4 @@ export 'web_search_bar.dart';
 export 'common/custom_button.dart';
 export 'common/error.dart';
 export 'common/loader.dart';
-export 'features/chat/button_chat_field.dart';
+export 'features/chat/bottom_chat_field.dart';
