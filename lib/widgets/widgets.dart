@@ -8,3 +8,4 @@ export 'web_search_bar.dart';
 export 'common/custom_button.dart';
 export 'common/error.dart';
 export 'common/loader.dart';
+export 'features/chat/button_chat_field.dart';
